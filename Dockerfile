@@ -3,4 +3,5 @@ MAINTAINER Gerry Setiawan <gerrysetiawan@protonmail.com
 RUN dnf update -y && dnf install nginx -y
 RUN systemctl enable nginx --now
 EXPOSE 80
-CMD /bin/bash
+ENTRYPOINT /usr/local/nginx/sbin/nginx/
+CMD ["-g", "daemon off;"]
